@@ -199,11 +199,11 @@ function StudentRoomLayout({ username }: { username: string }) {
         // Request current tab screen share
         const stream = await navigator.mediaDevices.getDisplayMedia({
           video: {
-            displaySurface: 'browser' as any,
-          } as any,
+            displaySurface: 'browser',
+          },
           audio: false,
-          preferCurrentTab: true as any,
-        });
+          preferCurrentTab: true,
+        } as any);
         
         await localParticipant.publishTrack(stream.getVideoTracks()[0], {
           name: 'screen',
