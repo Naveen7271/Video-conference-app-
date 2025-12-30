@@ -100,11 +100,11 @@ function StudentRoomLayout({ username }: { username: string }) {
         // Request current tab screen share with specific constraints
         const stream = await navigator.mediaDevices.getDisplayMedia({
           video: {
-            displaySurface: 'browser' as any,
-          } as any,
+            displaySurface: 'browser',
+          },
           audio: false,
-          preferCurrentTab: true as any,
-        });
+          preferCurrentTab: true,
+        } as any);
         
         // Publish the screen share track
         await localParticipant.publishTrack(stream.getVideoTracks()[0], {
